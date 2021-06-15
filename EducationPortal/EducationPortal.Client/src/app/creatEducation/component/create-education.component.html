@@ -1,0 +1,41 @@
+<dashboard></dashboard>
+<div class="conteiner" style="margin-top: 100px; margin-left: 600px;">
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm" (ngSubmit)="createEducation()"  >
+        <h2>Eğitim Tanımla</h2>
+        <hr>
+        <div class="form-group">
+
+          <input type="text"  name="educationName" class="form-control" placeholder="Eğitim Adı" minlength="5" [(ngModel)]="model.educationName"  required>
+        </div>
+        <div class="form-group">
+          <input type="number"  name="quota" class="form-control" placeholder="Kontenjan" [(ngModel)]="model.quota"  required>
+
+        </div>
+        <div class="form-group">
+          <input type="number"  name="dailyCost" class="form-control" placeholder="Günlük Maaliyet (TL)"  [(ngModel)]="model.dailyCost" required>
+        </div>
+        <div class="form-group">
+          <input type="number"  name="time" class="form-control" placeholder="Toplam Süre (DK)" [(ngModel)]="model.time"   required>
+
+        </div>
+        Kategori :
+        <select class="form-select" aria-label="Default select example" name="category" [(ngModel)]="model.category" >
+          <option value="online">Online</option>
+          <option value="sinifici">Sınıf İçi Eğitim</option>
+          <option value="kitap">Kitap</option>
+          <option value="sunum">Sunum</option>
+          <option value="makale">Makale</option>
+          <option value="miniproje">Mini Proje</option>
+        </select>
+
+
+        <hr>
+        <button [disabled]="form.invalid" type="submit" class="btn btn-primary btn-block">Submit</button>
+
+      </form>
+    </div>
+
+  </div>
+</div>

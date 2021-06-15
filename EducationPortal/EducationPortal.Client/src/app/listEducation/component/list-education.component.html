@@ -1,0 +1,36 @@
+
+<dashboard></dashboard>
+<div class="conteiner" style="margin-top: 100px; margin-left: 600px;">
+  <div class="row">
+    <div class="col-8">
+      <h3 class="bg-primary text-wite p-2">Eğitim Listesi</h3>
+      <table class="table table-bordere tale-striped">
+        <thead>
+          <tr>
+            <th>Eğitim Adı</th>
+            <th>Kategori</th>
+            <th>Kontenjan</th>
+            <th>Time</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of edudto" >
+            <td>{{item.educationName}}</td>
+            <td>{{item.categoryName}}</td>
+            <td>{{item.quota}}</td>
+            <td>{{item.time}}</td>
+            <td>
+            <button class="btn btn-danger" (click)="deleteEducation(item.id)" >Delete</button>
+          </td>
+        </tr>
+        </tbody>
+            </table>
+
+    </div>
+
+  </div>
+</div>
+
+
